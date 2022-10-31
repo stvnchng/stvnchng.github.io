@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="media/icon.png" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Steven Chung</title>
+  </head>
+
+  <body>
+    <div id="content">
+      <div id="particles-js"></div>
+      <div class="space">
+        <header x-data="{open: false}">
+          <a class="skip" href="#about">Skip To Content</a>
+          <a class="name"href="/">Steven Chung</a>
+          <div id="hamburger" @click="open = !open;" :class="!open ? '' : 'is-active'">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+          <nav class="main-nav" :class="!open ? '' : 'active'">
+            <ul class="nav-list">
+              <li :class="!open ? 'fly-out' : 'fly-in'">
+                <a href="#about" class="nav-link" @click="open = !open">About</a>
+              </li>
+              <li :class="!open ? 'fly-out' : 'fly-in'">
+                <a href="#projects" class="nav-link" @click="open = !open">Work</a>
+              </li>
+              <li :class="!open ? 'fly-out' : 'fly-in'">
+                <a href="#contact" class="nav-link" @click="open = !open">Contact</a>
+              </li>
+              <li :class="!open ? 'fly-out' : 'fly-in'">
+                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1wH1-iK6-sJOMju3P3_1UzgOpVkHHOVJl/view?usp=sharing" class="nav-link">Resume</a>
+              </li>
+              <li class="nav-socials socials" :class="!open ? 'fly-out' : 'fly-in'">
+                <ul class="socials-list">
+                  <li>
+                    <a
+                      href="mailto:sc111@rice.edu"
+                    >
+                      <title>Email</title>
+                      <i class="fa fa-envelope"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://github.com/stvnchng"
+                    >
+                      <title>GitHub</title>
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://linkedin.com/in/stvnchng"
+                    >
+                      <title>LinkedIn</title>
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="landing">
+          <h1>Hello.</h1>
+          <h6>Thanks for stopping by.</h6>
+          <div class="astronaut">
+            <img src="media/astronaut.gif" alt="Floating astronaut typing on a computer."/>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-down">
+        <a href="#about"><span></span>Scroll</a>
+      </div>
+
+      <div class="left socials">
+        <ul class="socials-list">
+          <li>
+            <a
+              href="mailto:sc111@rice.edu"
+              data-tooltip="sc111@rice.edu"
+            >
+              <title>Email</title>
+              <i class="fa fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/stvnchng"
+              data-tooltip="@stvnchng"
+            >
+              <title>GitHub</title>
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://linkedin.com/in/stvnchng"
+              data-tooltip="/in/stvnchng"
+            >
+              <title>LinkedIn</title>
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1wH1-iK6-sJOMju3P3_1UzgOpVkHHOVJl/view?usp=sharing"
+              data-tooltip="résumé!"
+            >
+              <title>Resume</title>
+              <i class="fas fa-file"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="heading" data-aos="fade-up">
+            <h1>About</h1>
+          </div>
+          <div class="profile-whole">
+            <div class="profile-pic" data-aos="fade-left" data-aos-delay="150">
+              <img src="media/run.gif" alt="running-pixel-guy" />
+            </div>
+            <div class="profile" data-aos="fade-right" data-aos-delay="250">
+              <p>Hi, I'm Steven. I'm a student at Rice, and I love to design and build things.</p>
+              <br />
+              <p>
+                  I'm currently looking for new grad software positions. You can see my work experience and projects below (or find my resume in the menu). If you'd like to reach out, feel free to email me or connect on LinkedIn!
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="container">
+          <div class="heading" data-aos="fade-up">
+            <h1>Experience</h1>
+          </div>
+
+          <details class="job-item enlarge">
+            <summary><img src="media/coinbase.jpg" alt="Coinbase logo"/></summary>
+            <div class="title">
+              <h1>SWE Intern @ Coinbase</h1>
+              <h6>Jun. 2022 - Aug. 2022</h6>
+            </div>
+            <ul class="desc-items">
+              <li>Directly responsible for planning and communication across teams for an effort to improve the UX of Coinbase Wallet’s transactions history page.</li>
+              <li>Wrote feature to allow sorting/filtering, added icons to show blockchains that transactions occured on and previews for NFT transactions.</li>
+              <li>Helped tackle bug fixes and UI improvements for Wallet ahead of release dates.</li>
+            </ul>
+          </details>
+
+          <details class="job-item enlarge">
+            <summary><img src="media/cybcube.png" alt="CyberCube logo"/></summary>
+            <div class="title">
+              <h1>SWE Intern @ CyberCube</h1>
+              <h6>Jun. 2021 - Aug. 2021</h6>
+            </div>
+            <ul class="desc-items">
+              <li>Performed telemetry on CyberCube's user admin software and content management system.</li>
+              <li>Recorded active time spent on pages for the CMS and compiled data into graphs and charts with AWS.</li>
+              <li>Created features for user admin software with React and Redux under a scrum workflow.</li>
+            </ul>
+          </details>
+
+          <details class="job-item enlarge">
+            <summary><img src="media/kopis.png" alt="Kopis Mobile logo"/></summary>
+            <div class="title">
+              <h1>SWE @ Kopis Mobile</h1>
+              <h6>Aug. 2020 - Apr. 2021</h6>
+            </div>
+            <ul class="desc-items">
+              <li>Helped build BASE and SCOUT, web apps for storage and assessment of security best practices.</li>
+              <li>Wrote CSS breakpoints to give both applications a responsive mobile view.</li>
+              <li>Designed product landing pages with Gatsby.</li>
+              <li>Created a JavaFX application to facilitate startup and configuration for an lean services network.</li>
+            </ul>
+          </details>
+
+          <details class="job-item enlarge">
+            <summary><img src="media/casectrl.jpg" alt="CaseCtrl logo"/></summary>
+            <div class="title">
+              <h1>SWE Intern @ CaseCtrl</h1>
+              <h6>Jun. 2020 - Aug. 2020</h6>
+            </div>
+            <ul class="desc-items">
+              <li>Helped build CaseCtrl, an application that automates surgery scheduling logistics.</li>
+              <li>Learned a bit of ASP.NET Core through working on the front-end and back-end of the application. </li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="heading" data-aos="fade-up" data-aos-delay="150">
+            <h1>Projects</h1>
+          </div>
+          <div class="work-item">
+            <div class="work-img" data-aos="fade-right" data-aos-delay="100">
+              <img src="media/blop.png" alt="BLOP gameplay"/>
+            </div>
+            <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
+              <div class="title">
+                <h6>Game and UI Designer</h6>
+                <h1>BLOP</h1>
+              </div>
+              <p>
+                BLOP is a physics-based strategy game where you build the highest block tower within the time limit. This was my first game jam project; the jam was Ludum Dare 49 and the theme was "unstable".
+              </p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://amberlightgames.itch.io/blop"
+                class="cta"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="work-img" data-aos="fade-right" data-aos-delay="100">
+              <img src="media/andrew.png" alt="Andrew Is Bored gameplay"/>
+            </div>
+            <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
+              <div class="title">
+                <h6>Game Designer and Artist</h6>
+                <h1>andrew is bored</h1>
+              </div>
+              <p>
+                andrew is bored is a platformer that I built with some friends. It has both puzzles and platforming built into it - you control a character who moves around by dashing through blocks of light and dark.
+              </p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://amberlightgames.itch.io/andrew-is-bored"
+                class="cta"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="work-img" data-aos="fade-right" data-aos-delay="100">
+              <img src="media/site.png" alt="this website"/>
+            </div>
+            <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
+              <div class="title">
+                <h6>Web Designer</h6>
+                <h1>Portfolio Site</h1>
+              </div>
+              <p>
+                This site was designed from scratch using the holy trinity and is fully responsive. I've probably spent too much time on this, but I've learned a lot about CSS by using this as my playground.
+              </p>
+              <a href="#" class="cta" id="self">View Project</a>
+              &emsp;&emsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/stvnchng/personal_site"
+                class="cta"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="heading" data-aos="fade-up" data-aos-delay="150">
+            <h1>Contact</h1>
+          </div>
+          <div class="contact-desc">
+            <h2>Let's Chat!</h2>
+            <p>Thanks for visiting my portfolio. Again, feel free to drop me a message if you'd like to chat. I'll do my best to get back to you soon.</p>
+          </div>
+      </section>
+
+      <footer>
+        <div class="socials">
+          <ul class="socials-list">
+            <li>
+              <a
+                href="mailto:sc111@rice.edu"
+              >
+                <title>Email</title>
+                <i class="fa fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/stvnchng"
+              >
+                <title>GitHub</title>
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://linkedin.com/in/stvnchng"
+              >
+                <title>LinkedIn</title>
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <span>&copy; Steven Chung <span x-data x-text="new Date().getFullYear()"></span></span>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
