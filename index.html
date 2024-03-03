@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="media/icon.png" />
@@ -27,8 +30,12 @@
       <div class="space">
         <header x-data="{open: false}">
           <a class="skip" href="#about">Skip To Content</a>
-          <a class="name"href="/">Steven Chung</a>
-          <div id="hamburger" @click="open = !open;" :class="!open ? '' : 'is-active'">
+          <a class="name" href="/">Steven Chung</a>
+          <div
+            id="hamburger"
+            @click="open = !open;"
+            :class="!open ? '' : 'is-active'"
+          >
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
@@ -36,23 +43,31 @@
           <nav class="main-nav" :class="!open ? '' : 'active'">
             <ul class="nav-list">
               <li :class="!open ? 'fly-out' : 'fly-in'">
-                <a href="#about" class="nav-link" @click="open = !open">About</a>
+                <a href="#about" class="nav-link" @click="open = !open"
+                  >About</a
+                >
               </li>
               <li :class="!open ? 'fly-out' : 'fly-in'">
-                <a href="#projects" class="nav-link" @click="open = !open">Work</a>
+                <a href="#projects" class="nav-link" @click="open = !open"
+                  >Work</a
+                >
               </li>
               <li :class="!open ? 'fly-out' : 'fly-in'">
-                <a href="#contact" class="nav-link" @click="open = !open">Contact</a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://drive.google.com/file/d/1Wi1jlasr-bXrST3HKTXJHL5hQBSz6FD3/view"
+                  class="nav-link"
+                  >Resume</a
+                >
               </li>
-              <li :class="!open ? 'fly-out' : 'fly-in'">
-                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1Wi1jlasr-bXrST3HKTXJHL5hQBSz6FD3/view" class="nav-link">Resume</a>
-              </li>
-              <li class="nav-socials socials" :class="!open ? 'fly-out' : 'fly-in'">
+              <li
+                class="nav-socials socials"
+                :class="!open ? 'fly-out' : 'fly-in'"
+              >
                 <ul class="socials-list">
                   <li>
-                    <a
-                      href="mailto:sc111@rice.edu"
-                    >
+                    <a href="mailto:sc111@rice.edu">
                       <title>Email</title>
                       <i class="fa fa-envelope"></i>
                     </a>
@@ -83,10 +98,13 @@
           </nav>
         </header>
         <div class="landing">
-          <h1>Hello.</h1>
-          <h6>Thanks for stopping by.</h6>
+          <h1>Hello!</h1>
+          <h6>Welcome to my digital abode.</h6>
           <div class="astronaut">
-            <img src="media/astronaut.gif" alt="Floating astronaut typing on a computer."/>
+            <img
+              src="media/astronaut.gif"
+              alt="Floating astronaut typing on a computer."
+            />
           </div>
         </div>
       </div>
@@ -98,10 +116,7 @@
       <div class="left socials">
         <ul class="socials-list">
           <li>
-            <a
-              href="mailto:sc111@rice.edu"
-              data-tooltip="sc111@rice.edu"
-            >
+            <a href="mailto:sc111@rice.edu" data-tooltip="sc111@rice.edu">
               <title>Email</title>
               <i class="fa fa-envelope"></i>
             </a>
@@ -133,7 +148,7 @@
               target="_blank"
               rel="noopener noreferrer"
               href="https://drive.google.com/file/d/1wH1-iK6-sJOMju3P3_1UzgOpVkHHOVJl/view?usp=sharing"
-              data-tooltip="résumé!"
+              data-tooltip="résumé"
             >
               <title>Resume</title>
               <i class="fas fa-file"></i>
@@ -152,10 +167,12 @@
               <img src="media/run.gif" alt="running-pixel-guy" />
             </div>
             <div class="profile" data-aos="fade-right" data-aos-delay="250">
-              <p>Hi, I'm Steven. I'm a student at Rice, and I love to build and design things.</p>
+              <p>Hi, I'm Steven. I build software and other fun things.</p>
               <br />
               <p>
-                  I'm currently looking for new grad software positions. You can see my work experience and projects below (or find my resume in the menu). If you'd like to reach out, feel free to email me or connect on LinkedIn!
+                Thanks for stopping by. If you'd like to reach out about
+                opportunities or anything else, feel free to connect - I'd be
+                happy to chat.
               </p>
               <br />
             </div>
@@ -170,53 +187,82 @@
           </div>
 
           <details class="job-item enlarge">
-            <summary><img src="media/coinbase.jpg" alt="Coinbase logo"/></summary>
+            <summary>
+              <img src="media/coinbase.jpg" alt="Coinbase logo" />
+            </summary>
             <div class="title">
               <h1>SWE Intern @ Coinbase</h1>
               <h6>Jun. 2022 - Aug. 2022</h6>
             </div>
             <ul class="desc-items">
-              <li>Engineering DRI for planning and documenting a project to improve the UX of Coinbase Wallet’s transactions history page.</li>
-              <li>Created feature to allow sorting/filtering, added icons to show blockchain networks that transactions occured on.</li>
-              <li>Helped tackle bug fixes and UI improvements for Wallet ahead of release dates.</li>
+              <li>
+                Owned and documented a project to improve the UX of Coinbase
+                Wallet’s transactions history page.
+              </li>
+              <li>
+                Created features to allow sorting/filtering, added icons to show
+                blockchain networks that transactions occured on.
+              </li>
+              <li>
+                Helped tackle bug fixes and UI improvements for Wallet ahead of
+                release dates.
+              </li>
             </ul>
           </details>
 
           <details class="job-item enlarge">
-            <summary><img src="media/cybcube.png" alt="CyberCube logo"/></summary>
+            <summary>
+              <img src="media/cybcube.png" alt="CyberCube logo" />
+            </summary>
             <div class="title">
               <h1>SWE Intern @ CyberCube</h1>
               <h6>Jun. 2021 - Aug. 2021</h6>
             </div>
             <ul class="desc-items">
-              <li>Performed telemetry on CyberCube's user admin software and content management system.</li>
-              <li>Recorded active time spent on pages for the CMS and compiled data into graphs and charts with AWS.</li>
-              <li>Created features for user admin software with React and Redux under a scrum workflow.</li>
+              <li>
+                Added telemetry logging to CyberCube's user admin software and
+                CMS to track usage patterns.
+              </li>
+              <li>
+                Recorded active page view times for the CMS and compiled data
+                into graphs and charts with AWS.
+              </li>
             </ul>
           </details>
 
           <details class="job-item enlarge">
-            <summary><img src="media/kopis.png" alt="Kopis Mobile logo"/></summary>
+            <summary>
+              <img src="media/kopis.png" alt="Kopis Mobile logo" />
+            </summary>
             <div class="title">
               <h1>SWE @ Kopis Mobile</h1>
               <h6>Aug. 2020 - Apr. 2021</h6>
             </div>
             <ul class="desc-items">
-              <li>Helped build BASE and SCOUT, web apps for storage and assessment of security best practices.</li>
-              <li>Wrote CSS to give both applications a responsive mobile view.</li>
-              <li>Designed and created product landing pages with Gatsby.</li>
-              <li>Created a Java GUI to handle startup and configuration of a lean services network.</li>
+              <li>
+                Converted production app for content management to have
+                mobile-friendly design using Sass/CSS.
+              </li>
+              <li>Designed and launched product landing pages with React.</li>
+              <li>
+                Created logging tool to improve efficiency of startup and
+                configuration of a lean services network.
+              </li>
             </ul>
           </details>
 
           <details class="job-item enlarge">
-            <summary><img src="media/casectrl.jpg" alt="CaseCtrl logo"/></summary>
+            <summary>
+              <img src="media/casectrl.jpg" alt="CaseCtrl logo" />
+            </summary>
             <div class="title">
               <h1>SWE Intern @ CaseCtrl</h1>
               <h6>Jun. 2020 - Aug. 2020</h6>
             </div>
             <ul class="desc-items">
-              <li>Built features on the CaseCtrl app with ASP.NET Core (C#, JS).</li>
+              <li>
+                Built features on the CaseCtrl app with ASP.NET Core (C#, JS).
+              </li>
             </ul>
           </details>
         </div>
@@ -229,7 +275,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/blop.png" alt="BLOP gameplay"/>
+              <img src="media/blop.png" alt="BLOP gameplay" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -237,7 +283,10 @@
                 <h1>BLOP</h1>
               </div>
               <p>
-                BLOP is a physics-based strategy game where you build the highest block tower within the time limit. This was my first game jam project; the jam was Ludum Dare 49 and the theme was "unstable".
+                BLOP is a physics-based strategy game where you build the
+                highest block tower within the time limit. This was my first
+                game jam project; the jam was Ludum Dare 49 and the theme was
+                "unstable".
               </p>
               <a
                 target="_blank"
@@ -250,7 +299,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/andrew.png" alt="Andrew Is Bored gameplay"/>
+              <img src="media/andrew.png" alt="Andrew Is Bored gameplay" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -258,7 +307,10 @@
                 <h1>andrew is bored</h1>
               </div>
               <p>
-                andrew is bored is a platformer that I built with some friends. It has both puzzles and platforming built into it - you control a character who moves around by dashing through blocks of light and dark.
+                andrew is bored is a platformer that I built with some friends.
+                It has both puzzles and platforming built into it - you control
+                a character who moves around by dashing through blocks of light
+                and dark.
               </p>
               <a
                 target="_blank"
@@ -271,7 +323,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/site.png" alt="this website"/>
+              <img src="media/site.png" alt="this website" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -279,7 +331,9 @@
                 <h1>Portfolio Site</h1>
               </div>
               <p>
-                This site was designed from scratch using the holy trinity and is fully responsive. I've probably spent too much time on this, but I've learned a lot about CSS by using this as my playground.
+                This site was designed from scratch using the holy trinity and
+                is fully responsive. I've probably spent too much time on this,
+                but I've learned a lot about CSS by using this as my playground.
               </p>
               <a href="#" class="cta" id="self">View Project</a>
               &emsp;&emsp;
@@ -295,24 +349,11 @@
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <div class="container">
-          <div class="heading" data-aos="fade-up" data-aos-delay="150">
-            <h1>Contact</h1>
-          </div>
-          <div class="contact-desc">
-            <h2>Let's Chat!</h2>
-            <p>Thanks for visiting my portfolio. Again, feel free to drop me a message if you'd like to chat. I'll do my best to get back to you soon.</p>
-          </div>
-      </section>
-
       <footer>
         <div class="socials">
           <ul class="socials-list">
             <li>
-              <a
-                href="mailto:sc111@rice.edu"
-              >
+              <a href="mailto:sc111@rice.edu">
                 <title>Email</title>
                 <i class="fa fa-envelope"></i>
               </a>
@@ -339,7 +380,10 @@
             </li>
           </ul>
         </div>
-        <span>&copy; Steven Chung <span x-data x-text="new Date().getFullYear()"></span></span>
+        <span
+          >&copy; Steven Chung
+          <span x-data x-text="new Date().getFullYear()"></span
+        ></span>
       </footer>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
