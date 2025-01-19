@@ -46,7 +46,7 @@ const toggleText = () => {
     }, 7250);
   }
 };
-document.getElementById("self").addEventListener("click", toggleText);
+document.getElementById("self")?.addEventListener("click", toggleText);
 
 document
   .querySelectorAll(".desc-items > li")

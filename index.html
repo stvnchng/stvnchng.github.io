@@ -104,6 +104,7 @@
             <img
               src="media/astronaut.gif"
               alt="Floating astronaut typing on a computer."
+              loading="lazy"
             />
           </div>
         </div>
@@ -149,9 +150,10 @@
               rel="noopener noreferrer"
               href="https://drive.google.com/file/d/1wH1-iK6-sJOMju3P3_1UzgOpVkHHOVJl/view?usp=sharing"
               data-tooltip="résumé"
+              aria-label="Resume"
             >
-              <title>Resume</title>
-              <i class="fas fa-file"></i>
+              <title>Resume</tfa-fileitle>
+              <i class="fas "></i>
             </a>
           </li>
         </ul>
@@ -164,7 +166,7 @@
           </div>
           <div class="profile-whole">
             <div class="profile-pic" data-aos="fade-left" data-aos-delay="150">
-              <img src="media/run.gif" alt="running-pixel-guy" />
+              <img src="media/run.gif" alt="running-pixel-guy" loading="lazy" />
             </div>
             <div class="profile" data-aos="fade-right" data-aos-delay="250">
               <p>Hi, I'm Steven. I build software and other fun things.</p>
@@ -188,7 +190,34 @@
 
           <details class="job-item enlarge">
             <summary>
-              <img src="media/coinbase.jpg" alt="Coinbase logo" />
+              <img src="media/ebot.svg" alt="EnergyBot logo" loading="lazy" />
+            </summary>
+            <div class="title">
+              <h1>SWE @ EnergyBot</h1>
+              <h6>Apr. 2023 - Present</h6>
+            </div>
+            <ul class="desc-items">
+              <li>
+                Optimized EnergyBot's entire test suite to a parallel headless
+                setup, resulting in a 6-7x increase in runtime, and reducing
+                manual intervention by 2 hours/week.
+              </li>
+              <li>
+                Conducted Lighthouse audits on EnergyBot's site, reducing
+                Largest Contentful Paint (LCP) from 6s to &lt;1s and boosting
+                performance and SEO scores from ~60 to above 90.
+              </li>
+              <li>
+                Onboarded external APIs for suppliers (OhmConnect, New Wave
+                Energy), enabling customers to sign up for energy through
+                EnergyBot's site.
+              </li>
+            </ul>
+          </details>
+
+          <details class="job-item enlarge">
+            <summary>
+              <img src="media/coinbase.jpg" alt="Coinbase logo" loading="lazy" />
             </summary>
             <div class="title">
               <h1>SWE Intern @ Coinbase</h1>
@@ -204,15 +233,15 @@
                 blockchain networks that transactions occured on.
               </li>
               <li>
-                Helped tackle bug fixes and UI improvements for Wallet ahead of
-                release dates.
+                Tackled UI fixes ahead of launch, helping release Wallet to 100%
+                of over 10 million users on Android and iOS.
               </li>
             </ul>
           </details>
 
           <details class="job-item enlarge">
             <summary>
-              <img src="media/cybcube.png" alt="CyberCube logo" />
+              <img src="media/cybcube.png" alt="CyberCube logo" loading="lazy" />
             </summary>
             <div class="title">
               <h1>SWE Intern @ CyberCube</h1>
@@ -232,7 +261,7 @@
 
           <details class="job-item enlarge">
             <summary>
-              <img src="media/kopis.png" alt="Kopis Mobile logo" />
+              <img src="media/kopis.png" alt="Kopis Mobile logo" loading="lazy" />
             </summary>
             <div class="title">
               <h1>SWE @ Kopis Mobile</h1>
@@ -253,7 +282,7 @@
 
           <details class="job-item enlarge">
             <summary>
-              <img src="media/casectrl.jpg" alt="CaseCtrl logo" />
+              <img src="media/casectrl.jpg" alt="CaseCtrl logo" loading="lazy" />
             </summary>
             <div class="title">
               <h1>SWE Intern @ CaseCtrl</h1>
@@ -275,7 +304,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/blop.png" alt="BLOP gameplay" />
+              <img src="media/blop.png" alt="BLOP gameplay" loading="lazy" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -299,7 +328,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/andrew.png" alt="Andrew Is Bored gameplay" />
+              <img src="media/andrew.png" alt="Andrew Is Bored gameplay" loading="lazy" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -323,7 +352,7 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
-              <img src="media/site.png" alt="this website" />
+              <img src="media/site.png" alt="this website" loading="lazy" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
               <div class="title">
@@ -353,7 +382,7 @@
         <div class="socials">
           <ul class="socials-list">
             <li>
-              <a href="mailto:sc111@rice.edu">
+              <a href="mailto:sc111@rice.edu" aria-label="Email">
                 <title>Email</title>
                 <i class="fa fa-envelope"></i>
               </a>
@@ -363,6 +392,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/stvnchng"
+                aria-label="@stvnchng on GitHub"
               >
                 <title>GitHub</title>
                 <i class="fab fa-github"></i>
@@ -373,6 +403,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://linkedin.com/in/stvnchng"
+                aria-label="Steven Chung on LinkedIn"
               >
                 <title>LinkedIn</title>
                 <i class="fab fa-linkedin"></i>

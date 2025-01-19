@@ -489,7 +489,6 @@ header {
 .job-item {
   margin: 15px 240px;
   padding: 14px;
-  display: flex;
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.25);
 }
