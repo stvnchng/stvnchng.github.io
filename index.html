@@ -207,19 +207,25 @@
             </div>
             <ul class="desc-items">
               <li>
-                Optimized EnergyBot's entire test suite to a parallel headless
-                setup, resulting in a 6-7x increase in runtime, and reducing
-                manual intervention by 2 hours/week.
+                Rewrote EnergyBot’s end-to-end test suite to a parallRewrote
+                EnergyBot’s end-to-end test suite to a parallel headless setup,
+                improving execution time by 6-7x and reducing manual
+                intervention by up to 2 hours/week.
               </li>
               <li>
-                Conducted Lighthouse audits on EnergyBot's site, reducing
+                Conducted Lighthouse audits on EnergyBot's siteImproved shop
+                site performance by conducting Lighthouse audits, reducing
                 Largest Contentful Paint (LCP) from 6s to &lt;1s and boosting
-                performance and SEO scores from ~60 to above 90.
+                performance from ~60 to above 90.
               </li>
               <li>
-                Onboarded external APIs for suppliers (OhmConnect, New Wave
-                Energy), enabling customers to sign up for energy through
-                EnergyBot's site.
+                Wrote a concurrent system-wide migration script to move
+                transaction-related emails from S3 to Elasticsearch.
+              </li>
+              <li>
+                Integrated external APIs for suppliers OhmConnect and New Wave
+                Energy into EnergyBot’s shopping experience, increasing customer
+                plan options.
               </li>
             </ul>
           </details>
@@ -310,6 +316,35 @@
           </div>
           <div class="work-item">
             <div class="work-img" data-aos="fade-right" data-aos-delay="100">
+              <img
+                src="media/tetrio.png"
+                alt="TETRIO gameplay"
+                loading="lazy"
+              />
+            </div>
+            <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
+              <div class="title">
+                <h6>Game Designer</h6>
+                <h1>Tetrio</h1>
+              </div>
+              <p>
+                Tetrio is a tile-matching game disguised as a Tetris clone. It's
+                still in development, but the main mechanics are there. I'm
+                planning to add a more comprehensive tutorial and juice elements
+                to make the matching more satisfying.
+              </p>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://solmaris.github.io/tetrio/"
+                class="cta"
+                >View Project</a
+              >
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-img" data-aos="fade-right" data-aos-delay="100">
               <img src="media/blop.png" alt="BLOP gameplay" loading="lazy" />
             </div>
             <div class="work-desc" data-aos="fade-left" data-aos-delay="100">
@@ -320,8 +355,7 @@
               <p>
                 BLOP is a physics-based strategy game where you build the
                 highest block tower within the time limit. This was my first
-                game jam project; the jam was Ludum Dare 49 and the theme was
-                "unstable".
+                game jam project (Ludum Dare 49) and the theme was "unstable".
               </p>
               <a
                 target="_blank"
