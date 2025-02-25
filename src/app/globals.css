@@ -13,7 +13,7 @@ html {
 
 body {
   @apply bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText;
-  background: linear-gradient(0deg, #797979 0%, #283a4e 35%, #0b0c13 100%);
+  cursor: url("/images/cursor.png"), auto;
 }
 
 body::-webkit-scrollbar {

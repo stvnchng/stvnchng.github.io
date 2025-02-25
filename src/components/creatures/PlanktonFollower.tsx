@@ -57,7 +57,7 @@ export default function PlanktonFollower({
 
   useEffect(() => {
     let animationFrameId: number;
-    const maxSpeed = 1.5;
+    const maxSpeed = 2;
     const maxForce = 0.08;
     const wanderStrength = 0.3;
     const damping = 0.9;
