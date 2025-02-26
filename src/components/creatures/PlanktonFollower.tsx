@@ -4,45 +4,42 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Plankton.module.css";
 
 interface PlanktonFollowerProps {
+  id: number;
   onClick: (x: number, y: number) => void;
+  removePlankton: (id: number) => void;
   spawnPosition: { x: number; y: number };
 }
 
 export default function PlanktonFollower({
+  id,
   onClick,
+  removePlankton,
   spawnPosition,
 }: PlanktonFollowerProps) {
   const [renderPosition, setRenderPosition] = useState(spawnPosition);
+  const [opacity, setOpacity] = useState(1);
   const positionRef = useRef({ x: 0, y: 0 });
   const targetRef = useRef({ x: 0, y: 0 });
   const velocityRef = useRef({ x: 0, y: 0 });
 
   // Generate random styles ONCE on mount
-  const randomStyles = useMemo(
-    () => ({
-      inner: {
-        borderRadius: generateRandomBorderRadius(),
-        width: generateSize(95),
-        height: generateSize(95),
-      },
-      outer: {
-        borderRadius: generateRandomBorderRadius(),
-        width: generateSize(120),
-        height: generateSize(120),
-      },
-      glow: {
-        borderRadius: generateRandomBorderRadius(),
-        width: generateSize(170),
-        height: generateSize(170),
-      },
-    }),
-    []
-  );
+  const randomStyles = useMemo(() => generateRandomStyles(id), [id]);
 
   // TODO remove this
   useEffect(() => {
-    console.log("PlanktonFollower mounted at", spawnPosition);
+    const lifespan = 30000 / (id + 1);
+    console.log("Plankton spawned at", spawnPosition, "wih lifespan", lifespan);
+
+    const fadeTimeout = setTimeout(() => setOpacity(0), lifespan - 1000);
+    const lifespanTimeout = setTimeout(() => removePlankton(id), lifespan);
+
+    return () => {
+      console.log("RIP PlanktonFollower ", id);
+      clearTimeout(fadeTimeout);
+      clearTimeout(lifespanTimeout);
+    };
   }, []);
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       targetRef.current = {
@@ -127,9 +124,10 @@ export default function PlanktonFollower({
       style={{
         position: "absolute",
         transform: `translate3d(${renderPosition.x}px, ${renderPosition.y}px, 0)`,
-        transition: "transform",
+        transition: "transform, opacity 1s ease-out",
         left: spawnPosition.x,
         top: spawnPosition.y,
+        opacity: `${opacity}`,
       }}
     >
       <div className={styles.inner} style={randomStyles.inner}></div>
@@ -139,9 +137,30 @@ export default function PlanktonFollower({
   );
 }
 
-const generateRandomBorderRadius = () => {
-  return `${40 + Math.random() * 30}% ${40 + Math.random() * 30}% 
-          ${40 + Math.random() * 30}% ${40 + Math.random() * 30}%`;
+const detRnd = (seed: number, min: number, factor: number) => {
+  let x = Math.sin(seed) * 10000;
+  return min + (x - Math.floor(x)) * factor;
 };
 
-const generateSize = (base: number) => `${base + Math.random() * 20}%`;
+const generateRandomStyles = (id: number) => {
+  return {
+    inner: {
+      borderRadius: `${detRnd(id, 40, 30)}% ${detRnd(id + 1, 40, 30)}% 
+                    ${detRnd(id + 2, 40, 30)}% ${detRnd(id + 3, 40, 30)}%`,
+      width: `${detRnd(id + 4, 95, 20)}%`,
+      height: `${detRnd(id + 5, 95, 20)}%`,
+    },
+    outer: {
+      borderRadius: `${detRnd(id + 6, 40, 30)}% ${detRnd(id + 7, 40, 30)}% 
+                    ${detRnd(id + 8, 40, 30)}% ${detRnd(id + 9, 40, 30)}%`,
+      width: `${detRnd(id + 10, 120, 20)}%`,
+      height: `${detRnd(id + 11, 120, 20)}%`,
+    },
+    glow: {
+      borderRadius: `${detRnd(id + 12, 40, 30)}% ${detRnd(id + 13, 40, 30)}% 
+                    ${detRnd(id + 14, 40, 30)}% ${detRnd(id + 15, 40, 30)}%`,
+      width: `${detRnd(id + 16, 170, 20)}%`,
+      height: `${detRnd(id + 17, 170, 20)}%`,
+    },
+  };
+};

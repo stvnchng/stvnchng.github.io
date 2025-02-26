@@ -18,12 +18,18 @@ export default function Landing() {
     ]);
   };
 
+  const removePlankton = (id: number) => {
+    setPlanktonFollowers((prev) => prev.filter((p) => p.id !== id));
+  };
+
   return (
     <section className="section-top flex flex-col items-center justify-center min-h-screen p-4">
       {planktonFollowers.map((plankton) => (
         <PlanktonFollower
           key={plankton.id}
+          id={plankton.id}
           onClick={addPlanktonFollower}
+          removePlankton={removePlankton}
           spawnPosition={plankton.spawnPosition}
         />
       ))}

@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText">
       <Landing />
-      <Scroll />
+      {/* <Scroll />
       <About />
       <Work />
       <Projects />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
