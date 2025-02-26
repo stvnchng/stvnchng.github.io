@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.15, duration: 0.8 }}
           >
-            <img
+            <Image
               src="images/run.gif"
               alt="running-pixel-guy"
               loading="lazy"

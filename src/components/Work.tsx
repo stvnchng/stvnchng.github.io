@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type WorkItemProps = {
   company: string;
@@ -19,7 +20,7 @@ function WorkItem({ company, logo, title, date, desc }: WorkItemProps) {
       transition={{ delay: 0.2, duration: 0.8 }}
     >
       <summary className="cursor-pointer">
-        <img
+        <Image
           src={`images/${logo}`}
           alt={`${company} logo`}
           loading="lazy"

@@ -67,7 +67,7 @@ export default function PlanktonFollower({
       };
       const distance = Math.sqrt(toTarget.x ** 2 + toTarget.y ** 2);
 
-      let desiredVelocity = { x: 0, y: 0 };
+      const desiredVelocity = { x: 0, y: 0 };
 
       if (distance > 250) {
         const angleToTarget = Math.atan2(toTarget.y, toTarget.x);
@@ -138,7 +138,7 @@ export default function PlanktonFollower({
 }
 
 const detRnd = (seed: number, min: number, factor: number) => {
-  let x = Math.sin(seed) * 10000;
+  const x = Math.sin(seed) * 10000;
   return min + (x - Math.floor(x)) * factor;
 };
 

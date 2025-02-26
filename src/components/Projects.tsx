@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 const projects = [
@@ -65,7 +66,7 @@ export default function Projects() {
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <img
+              <Image
                 src={project.imageSrc}
                 alt={project.imageAlt}
                 className="w-full h-auto object-cover rounded-lg shadow-md"
