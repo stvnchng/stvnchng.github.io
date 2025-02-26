@@ -18,8 +18,8 @@ export default function PlanktonFollower({
 }: PlanktonFollowerProps) {
   const [renderPosition, setRenderPosition] = useState(spawnPosition);
   const [opacity, setOpacity] = useState(1);
-  const positionRef = useRef({ x: 0, y: 0 });
-  const targetRef = useRef({ x: 0, y: 0 });
+  const positionRef = useRef(spawnPosition);
+  const targetRef = useRef(spawnPosition);
   const velocityRef = useRef({ x: 0, y: 0 });
 
   // Generate random styles ONCE on mount
@@ -28,13 +28,13 @@ export default function PlanktonFollower({
   // TODO remove this
   useEffect(() => {
     const lifespan = 30000 / (id + 1);
-    console.log("Plankton spawned at", spawnPosition, "wih lifespan", lifespan);
+    console.log("Plankton spawned at", spawnPosition, "ttl:", lifespan);
 
     const fadeTimeout = setTimeout(() => setOpacity(0), lifespan - 1000);
     const lifespanTimeout = setTimeout(() => removePlankton(id), lifespan);
 
     return () => {
-      console.log("RIP PlanktonFollower ", id);
+      console.log("RIP Plankton", id);
       clearTimeout(fadeTimeout);
       clearTimeout(lifespanTimeout);
     };
@@ -105,6 +105,9 @@ export default function PlanktonFollower({
         x: positionRef.current.x,
         y: positionRef.current.y,
       });
+      // console.log(
+      //   `Plankton ${id} at ${positionRef.current.x}, ${positionRef.current.y}`
+      // );
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -123,10 +126,10 @@ export default function PlanktonFollower({
       onClick={handleClick}
       style={{
         position: "absolute",
+        top: 0,
+        left: 0,
         transform: `translate3d(${renderPosition.x}px, ${renderPosition.y}px, 0)`,
         transition: "transform, opacity 1s ease-out",
-        left: spawnPosition.x,
-        top: spawnPosition.y,
         opacity: `${opacity}`,
       }}
     >
