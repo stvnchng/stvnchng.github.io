@@ -33,8 +33,8 @@ export default function About() {
             </p>
             <br />
             <p className="text-2xl">
-              If you'd like to reach out about opportunities or anything else,
-              feel free to send a message - I'd be happy to chat.
+              If you&apos;d like to reach out about opportunities or anything
+              else, feel free to send a message - I&apos;ll be happy to chat.
             </p>
             <br />
           </motion.div>
