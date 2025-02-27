@@ -4,18 +4,15 @@ import { useState } from "react";
 import PlanktonFollower from "./creatures/PlanktonFollower";
 
 export default function Landing() {
-  // FIXME: bug where new plankton with x, y using distance relative to spawn point instead of absolute position
   const [planktonFollowers, setPlanktonFollowers] = useState([
     { id: 0, spawnPosition: { x: 0, y: 0 } },
   ]);
+  const [nextId, setNextId] = useState(1);
 
   const addPlanktonFollower = (x: number, y: number) => {
-    console.log("spawn plankton");
-
-    setPlanktonFollowers((prev) => [
-      ...prev,
-      { id: prev.length, spawnPosition: { x, y } },
-    ]);
+    const newPlankton = { id: nextId, spawnPosition: { x, y } };
+    setPlanktonFollowers((prev) => [...prev, newPlankton]);
+    setNextId(nextId + 1);
   };
 
   const removePlankton = (id: number) => {
