@@ -18,7 +18,7 @@ export default function PlanktonFollower({
 }: PlanktonFollowerProps) {
   const [renderPosition, setRenderPosition] = useState(spawnPosition);
   const [opacity, setOpacity] = useState(1);
-  const lifespan = useRef(60000 / id);
+  const lifespan = useRef(60000 / (id + 1));
   const positionRef = useRef(spawnPosition);
   const targetRef = useRef(spawnPosition);
   const velocityRef = useRef({ x: 0, y: 0 });
@@ -120,8 +120,8 @@ export default function PlanktonFollower({
       if (positionRef.current.y < 0) {
         positionRef.current.y = 0;
         velocityRef.current.y *= -1;
-      } else if (positionRef.current.y > window.innerHeight) {
-        positionRef.current.y = window.innerHeight;
+      } else if (positionRef.current.y > document.body.scrollHeight) {
+        positionRef.current.y = document.body.scrollHeight;
         velocityRef.current.y *= -1;
       } else {
         positionRef.current.y += velocityRef.current.y;
