@@ -18,6 +18,7 @@ export default function PlanktonFollower({
 }: PlanktonFollowerProps) {
   const [renderPosition, setRenderPosition] = useState(spawnPosition);
   const [opacity, setOpacity] = useState(1);
+  const lifespan = useRef(60000 / id);
   const positionRef = useRef(spawnPosition);
   const targetRef = useRef(spawnPosition);
   const velocityRef = useRef({ x: 0, y: 0 });
@@ -27,16 +28,25 @@ export default function PlanktonFollower({
 
   // TODO remove this
   useEffect(() => {
-    const lifespan = 30000 / (id + 1);
     console.log("Plankton spawned at", spawnPosition, "ttl:", lifespan);
 
-    const fadeTimeout = setTimeout(() => setOpacity(0), lifespan - 1000);
-    const lifespanTimeout = setTimeout(() => removePlankton(id), lifespan);
+    // const fadeTimeout = setTimeout(() => setOpacity(0), lifespan - 1000);
+    // const lifespanTimeout = setTimeout(() => removePlankton(id), lifespan);
+    const checkLifespan = setInterval(() => {
+      if (lifespan.current <= 0) {
+        removePlankton(id);
+        return;
+      } else if (lifespan.current <= 1000) {
+        setOpacity(0);
+      }
+      lifespan.current -= 1000;
+    }, 1000);
 
     return () => {
       console.log("RIP Plankton", id);
-      clearTimeout(fadeTimeout);
-      clearTimeout(lifespanTimeout);
+      clearInterval(checkLifespan);
+      // clearTimeout(fadeTimeout);
+      // clearTimeout(lifespanTimeout);
     };
   }, []);
 
@@ -55,10 +65,10 @@ export default function PlanktonFollower({
   useEffect(() => {
     let animationFrameId: number;
     const maxSpeed = 2;
-    const maxForce = 0.08;
+    const maxForce = 0.06;
     const wanderStrength = 0.3;
     const damping = 0.9;
-    const maxX = window.innerWidth * 0.9;
+    const maxX = window.innerWidth * 0.85;
 
     const animate = () => {
       const toTarget = {
@@ -69,19 +79,24 @@ export default function PlanktonFollower({
 
       const desiredVelocity = { x: 0, y: 0 };
 
-      if (distance > 250) {
-        const angleToTarget = Math.atan2(toTarget.y, toTarget.x);
-        const wanderAngle =
-          angleToTarget + (Math.random() - 0.5) * wanderStrength;
-        desiredVelocity.x = Math.cos(wanderAngle) * maxSpeed;
-        desiredVelocity.y = Math.sin(wanderAngle) * maxSpeed;
+      const angleToTarget = Math.atan2(toTarget.y, toTarget.x);
+      if (distance > 200) {
+        const wanderAngle = angleToTarget + Math.random() * wanderStrength;
+        desiredVelocity.x =
+          Math.cos(wanderAngle) * maxSpeed + id * 0.1 * (-1) ** id;
+        desiredVelocity.y =
+          Math.sin(wanderAngle) * maxSpeed + id * 0.1 * (-1) ** id;
       } else {
-        const noise =
-          Math.sin(
-            positionRef.current.x * 0.02 + positionRef.current.y * 0.02
-          ) * 0.5;
-        desiredVelocity.x = Math.cos(noise) * maxSpeed * 0.5;
-        desiredVelocity.y = Math.sin(noise) * maxSpeed * 0.5;
+        // "heal" the plankton
+        if (distance < 150) {
+          lifespan.current += 10;
+        }
+
+        const oppositeAngle = angleToTarget + Math.PI / 2 + Math.random();
+        desiredVelocity.x =
+          Math.cos(oppositeAngle) * maxSpeed + id * 0.1 * (-1) ** id;
+        desiredVelocity.y =
+          Math.sin(oppositeAngle) * maxSpeed + id * 0.1 * (-1) ** id;
       }
 
       const steer = {
@@ -89,25 +104,33 @@ export default function PlanktonFollower({
         y: (desiredVelocity.y - velocityRef.current.y) * maxForce,
       };
 
-      // Update velocity with damping
       velocityRef.current.x = (velocityRef.current.x + steer.x) * damping;
       velocityRef.current.y = (velocityRef.current.y + steer.y) * damping;
 
-      // Update position with horizontal constraints
-      positionRef.current.x = Math.min(
-        maxX,
-        positionRef.current.x + velocityRef.current.x
-      );
+      if (positionRef.current.x < 0) {
+        positionRef.current.x = 0;
+        velocityRef.current.x *= -1;
+      } else if (positionRef.current.x > maxX) {
+        positionRef.current.x = maxX;
+        velocityRef.current.x *= -1;
+      } else {
+        positionRef.current.x += velocityRef.current.x;
+      }
 
-      positionRef.current.y += velocityRef.current.y;
+      if (positionRef.current.y < 0) {
+        positionRef.current.y = 0;
+        velocityRef.current.y *= -1;
+      } else if (positionRef.current.y > window.innerHeight) {
+        positionRef.current.y = window.innerHeight;
+        velocityRef.current.y *= -1;
+      } else {
+        positionRef.current.y += velocityRef.current.y;
+      }
 
       setRenderPosition({
         x: positionRef.current.x,
         y: positionRef.current.y,
       });
-      // console.log(
-      //   `Plankton ${id} at ${positionRef.current.x}, ${positionRef.current.y}`
-      // );
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -131,6 +154,7 @@ export default function PlanktonFollower({
         transform: `translate3d(${renderPosition.x}px, ${renderPosition.y}px, 0)`,
         transition: "transform, opacity 1s ease-out",
         opacity: `${opacity}`,
+        pointerEvents: lifespan.current <= 1000 ? "none" : "auto",
       }}
     >
       <div className={styles.inner} style={randomStyles.inner}></div>
