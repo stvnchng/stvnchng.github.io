@@ -124,3 +124,8 @@ body.dark div {
     transform: translateY(5px);
   }
 }
+
+canvas {
+  z-index: -9999 !important;
+  pointer-events: none !important;
+}

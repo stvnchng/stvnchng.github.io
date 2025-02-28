@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Socials from "@/components/Socials";
 import CursorLight from "@/components/Cursor";
+import MarineSnow from "@/components/creatures/MarineSnow";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Socials />
         {children}
         <CursorLight />
+        <MarineSnow />
       </body>
     </html>
   );
