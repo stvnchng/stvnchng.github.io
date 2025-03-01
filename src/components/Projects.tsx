@@ -1,5 +1,6 @@
 import React from "react";
 import { GitHubIcon, LinkIcon } from "./svgs/Icons";
+import Image from "next/image";
 
 type Project = {
   title: string;
@@ -59,7 +60,7 @@ const projects: Project[] = [
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-5xl mx-auto">
     <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-      <img
+      <Image
         src={project.imageSrc}
         alt={project.imageAlt}
         width={600}

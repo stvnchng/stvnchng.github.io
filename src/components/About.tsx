@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function About() {
   return (
     <section id="about" className="py-16">
@@ -7,10 +5,10 @@ export default function About() {
         <div className="flex items-center justify-center mx-auto">
           <div className="ml-10">
             <p className="text-lg">
-              Hi, I'm Steven. I specialize in crafting great user experiences. I
-              am currently an engineer at EnergyBot, where I work across both
-              the UI and backend to deliver a seamless experience for our
-              residential customers.
+              Hi, I&apos;m Steven. I specialize in crafting great user
+              experiences. I am currently an engineer at EnergyBot, where I work
+              across both the UI and backend to deliver a seamless experience
+              for our residential customers.
             </p>
             <br />
             <p className="text-lg">
@@ -19,8 +17,8 @@ export default function About() {
             </p>
             <br />
             <p className="text-lg">
-              While you&apos;re here, please be sure to keep the plankton fed -
-              they only need light but they tend to starve easily!
+              While you&apos;re here, please be sure to keep the plankton fed.
+              They only need light but they tend to starve easily!
             </p>
             <br />
           </div>

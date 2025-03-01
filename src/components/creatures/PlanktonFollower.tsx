@@ -42,7 +42,7 @@ export default function PlanktonFollower({
       // console.log("RIP Plankton", id);
       clearInterval(checkLifespan);
     };
-  }, []);
+  }, [id, removePlankton]);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -127,7 +127,7 @@ export default function PlanktonFollower({
 
     animate();
     return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+  }, [id]);
 
   const handleClick = () => {
     onClick(targetRef.current.x, targetRef.current.y);

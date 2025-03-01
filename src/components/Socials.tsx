@@ -29,6 +29,7 @@ const socials = [
 
 export default function Socials() {
   return (
+    // TODO fix position on small screens
     <div className="left fixed left-4 md:left-6 md:block hidden">
       <ul className="flex flex-col gap-5 my-4">
         {socials.map(({ href, tooltip, title, icon }) => (
