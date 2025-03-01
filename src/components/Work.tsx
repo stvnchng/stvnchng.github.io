@@ -10,7 +10,7 @@ type WorkItemProps = {
 
 function WorkItem({ company, logo, title, date, desc }: WorkItemProps) {
   return (
-    <div className="relative w-full max-w-5xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center">
+    <div className="relative w-full max-w-5xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
       <div className="flex-1">
         <h1 className="text-3xl font-bold text-gray-50">
           {title} @ {company}
@@ -52,9 +52,9 @@ export default function Work() {
           date="Apr. 2023 - Present"
           desc={[
             "Improved test pipeline speed by 6-7x by migrating to a parallel headless setup.",
-            "Conducted Lighthouse audits, reducing LCP from 6s to <1s.",
-            "Wrote a concurrent system-wide migration script to move transaction-related emails from S3 to Elasticsearch.",
-            "Integrated external APIs for suppliers OhmConnect and New Wave Energy into EnergyBot’s shopping experience.",
+            "Reduced LCP on shop site from ~6s to ~1s and conducted regular Lighthouse audits.",
+            "Improved scalalibity of emails by writing a concurrent migration script from S3 to Elasticsearch.",
+            "Added hundreds of plan options for customers by integrating external supplier APIs (OhmConnect, New Wave Energy, etc.) into shopping experience.",
           ]}
         />
         <WorkItem
@@ -63,9 +63,8 @@ export default function Work() {
           title="Intern"
           date="Jun. 2022 - Aug. 2022"
           desc={[
-            "Owned and documented a project to improve the UX of Coinbase Wallet’s transactions history page.",
-            "Created features to allow sorting/filtering and added icons to show blockchain networks.",
-            "Tackled UI fixes ahead of launch, helping release Wallet to 100% of over 10 million users.",
+            "Owned a project to add sorting/filtering to Coinbase Wallet’s transactions page, working with Product and Design to improve the UX and usability.",
+            "Helped release Wallet to 100% of over 10 million mobile users, fixing UI bugs and adding new components.",
           ]}
         />
         <WorkItem
@@ -74,8 +73,8 @@ export default function Work() {
           title="Intern"
           date="Jun. 2021 - Aug. 2021"
           desc={[
-            "Added telemetry logging to track usage patterns for CyberCube's user admin software and CMS.",
-            "Recorded active page view times and compiled data into graphs and charts with AWS.",
+            "Integrated client-side usage data collection for internal content management system and client-facing broker manager software.",
+            "Leveraged AWS Quicksight to create usage data visualizations for account admins.",
           ]}
         />
         <WorkItem
@@ -84,9 +83,8 @@ export default function Work() {
           title="Engineer"
           date="Aug. 2020 - Apr. 2021"
           desc={[
-            "Converted production app for content management to a mobile-friendly design.",
-            "Designed and launched product landing pages with React.",
-            "Created a logging tool to improve the efficiency of a lean services network.",
+            "Wrote mobile-responsive SASS/CSS and end-to-end Cypress tests for content management apps.",
+            "Developed a GUI to automate and speed up the startup of an air-to-ground network configuration.",
           ]}
         />
       </div>

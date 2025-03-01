@@ -1,43 +1,38 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function About() {
   return (
     <section id="about" className="py-16">
-      <div className="container mx-auto max-w-6xl px-6">
-        <div className="flex items-center justify-center max-w-3xl mx-auto">
-          <motion.div
-            className="w-full max-w-xs mx-auto"
-            initial={{ x: -200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.15, duration: 0.8 }}
-          >
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex items-center justify-center mx-auto">
+          <div className="w-full max-w-xs mx-auto">
             <Image
-              src="images/run.gif"
+              src="/images/run.gif"
               alt="running-pixel-guy"
+              width={180}
+              height={180}
               loading="lazy"
               className="w-full max-w-[180px] mx-auto"
             />
-          </motion.div>
-          <motion.div
-            className="ml-10"
-            initial={{ x: 200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.25, duration: 0.8 }}
-          >
+          </div>
+          <div className="ml-10">
             <p className="text-2xl">
-              My work focuses on building great user experiences. In my spare
-              time, I enjoy building interactive media.
+              I specialize in building and designing great user experiences. I
+              have been fortunate enough to work on all parts of the stack,
+              however, and my interests in tech are varied.
             </p>
             <br />
             <p className="text-2xl">
-              If you&apos;d like to reach out about opportunities or anything
-              else, feel free to send a message - I&apos;ll be happy to chat.
+              In my spare time, I enjoy building interactive media such as games
+              or websites like this one.
             </p>
             <br />
-          </motion.div>
+            <p className="text-2xl">
+              While you&apos;re here, please be sure to keep the plankton fed.
+              All they need is light but they tend to starve easily.
+            </p>
+            <br />
+          </div>
         </div>
       </div>
     </section>

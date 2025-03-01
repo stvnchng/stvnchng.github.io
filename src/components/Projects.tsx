@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "BLOP",
     role: "Game Designer",
     description:
-      'A physics game where you stack blocks under a time limit. Built for Ludum Dare 49 - the theme was "unstable".',
+      'A game where you stack blocks under a time limit. Built for Ludum Dare 49 - the theme was "unstable".',
     imageSrc: "/images/blop.png",
     imageAlt: "BLOP gameplay",
     link: "https://amberlightgames.itch.io/blop",

@@ -1,5 +1,3 @@
-import SocialLinks from "./SocialLinks";
-
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -29,9 +27,6 @@ export default function NavMenu({ open, setOpen }: Props) {
             </a>
           </li>
         ))}
-        <li className="transition-transform duration-500 nav-socials">
-          <SocialLinks />
-        </li>
       </ul>
     </nav>
   );
