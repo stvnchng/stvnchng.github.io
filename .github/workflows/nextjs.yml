@@ -31,7 +31,7 @@ jobs:
         run: rm -rf .next
 
       - name: Build with Next.js
-        run: pnpm run build && pnpm run export
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
