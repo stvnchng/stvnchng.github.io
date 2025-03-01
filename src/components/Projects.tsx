@@ -55,8 +55,8 @@ const projects: Project[] = [
       "My first portfolio site. Fully responsive and designed from scratch with the holy trinity.",
     imageSrc: V1SiteImg,
     imageAlt: "this website",
-    link: "#",
-    githubLink: "https://github.com/stvnchng/stvnchng.github.io",
+    link: "https://stvnchng.github.io/portfolio-v1/",
+    githubLink: "https://github.com/stvnchng/portfolio-v1",
     techStack: ["HTML", "CSS", "JavaScript"],
   },
 ];

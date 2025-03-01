@@ -164,14 +164,14 @@ const generateRandomStyles = (id: number) => {
     inner: {
       borderRadius: `${detRnd(id, 40, 30)}% ${detRnd(id + 1, 40, 30)}% 
                     ${detRnd(id + 2, 40, 30)}% ${detRnd(id + 3, 40, 30)}%`,
-      width: `${detRnd(id + 4, 80, 15)}%`,
-      height: `${detRnd(id + 5, 80, 15)}%`,
+      width: `${detRnd(id + 4, 60, 15)}%`,
+      height: `${detRnd(id + 5, 60, 15)}%`,
     },
     outer: {
       borderRadius: `${detRnd(id + 6, 40, 30)}% ${detRnd(id + 7, 40, 30)}% 
                     ${detRnd(id + 8, 40, 30)}% ${detRnd(id + 9, 40, 30)}%`,
-      width: `${detRnd(id + 10, 105, 15)}%`,
-      height: `${detRnd(id + 11, 105, 15)}%`,
+      width: `${detRnd(id + 10, 85, 15)}%`,
+      height: `${detRnd(id + 11, 85, 15)}%`,
     },
     glow: {
       borderRadius: `${detRnd(id + 12, 40, 30)}% ${detRnd(id + 13, 40, 30)}% 
@@ -181,8 +181,8 @@ const generateRandomStyles = (id: number) => {
         0 0 ${detRnd(id + 7, 60, 40)}px rgba(0, 255, 255, 0.2),
         0 0 ${detRnd(id + 8, 100, 50)}px rgba(0, 255, 255, 0.1)
       `,
-      width: `${detRnd(id + 16, 140, 15)}%`,
-      height: `${detRnd(id + 17, 140, 15)}%`,
+      width: `${detRnd(id + 16, 120, 15)}%`,
+      height: `${detRnd(id + 17, 120, 15)}%`,
     },
   };
 };
