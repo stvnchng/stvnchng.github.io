@@ -38,7 +38,7 @@ export default function Socials() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={title}
-              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 transition"
+              className="flex items-center p-1 gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 transition"
             >
               {icon}
               <span className="absolute left-full ml-3 hidden rounded bg-gray-900 px-2 py-1 text-sm text-white opacity-0 transition group-hover:flex group-hover:opacity-100">

@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "BLOP",
     role: "Game Designer",
     description:
-      'A game where you stack blocks under a time limit. Built for Ludum Dare 49 - the theme was "unstable".',
+      'A game where you stack tetrominoes under a time limit. Built for Ludum Dare 49. The theme was "unstable".',
     imageSrc: "/images/blop.png",
     imageAlt: "BLOP gameplay",
     link: "https://amberlightgames.itch.io/blop",
@@ -37,7 +37,7 @@ const projects: Project[] = [
     title: "andrew is bored",
     role: "Game Designer/Artist",
     description:
-      "A puzzle platformer where you moves around by dashing through blocks of light and dark.",
+      "A puzzle platformer where you move around by dashing through blocks of light and dark.",
     imageSrc: "/images/andrew.png",
     imageAlt: "Andrew Is Bored gameplay",
     link: "https://amberlightgames.itch.io/andrew-is-bored",
@@ -47,7 +47,7 @@ const projects: Project[] = [
     title: "Portfolio V1",
     role: "Web Designer",
     description:
-      "My first portfolio site, designed from scratch using the holy trinity with fully responsive styles.",
+      "My first portfolio site, fully response and designed from scratch with the holy trinity.",
     imageSrc: "/images/site.png",
     imageAlt: "this website",
     link: "#",
@@ -81,11 +81,11 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
           {project.description}
         </p>
       </div>
-      <div className="tech-stack flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4">
         {project.techStack.map((tech, index) => (
           <span
             key={index}
-            className="tech-pill bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-sm px-4 py-1 rounded-full"
+            className="text-base bg-gray-300 dark:bg-teal-800 text-gray-700 dark:text-teal-50 px-4 py-1 rounded-full border-2 border-teal-500 "
           >
             {tech}
           </span>
@@ -96,7 +96,7 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-teal-600 hover:text-teal-800 transition duration-300"
+          className="p-1 text-teal-600 hover:text-teal-800 transition duration-300"
           aria-label={`View project: ${project.title}`}
         >
           <LinkIcon />
@@ -106,7 +106,7 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-teal-600 hover:text-teal-800 transition duration-300"
+            className="p-1 text-teal-600 hover:text-teal-800 transition duration-300"
             aria-label={`View GitHub repo: ${project.title}`}
           >
             <GitHubIcon size="h-6 w-6" />

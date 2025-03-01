@@ -29,7 +29,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="transition hover:text-lightAccent dark:hover:text-darkAccent"
+            className="p-1 transition hover:text-lightAccent dark:hover:text-darkAccent"
           >
             {icon}
           </a>
