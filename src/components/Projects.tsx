@@ -61,7 +61,9 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl mx-auto">
     <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
       <Image
-        src={project.imageSrc}
+        src={`${process.env.NODE_ENV === "production" ? "/website-v2" : ""}${
+          project.imageSrc
+        }`}
         alt={project.imageAlt}
         width={600}
         height={350}
