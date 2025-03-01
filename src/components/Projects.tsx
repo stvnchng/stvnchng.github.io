@@ -15,7 +15,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Tetrio",
-    role: "Game Designer",
+    role: "Game Design",
     description:
       "A tile-matching game disguised as a Tetris clone. Currently working on adding polish and juice.",
     imageSrc: "/images/tetrio.png",
@@ -25,7 +25,7 @@ const projects: Project[] = [
   },
   {
     title: "BLOP",
-    role: "Game Designer",
+    role: "Game Design",
     description:
       'A game where you stack tetrominoes under a time limit. Built for Ludum Dare 49. The theme was "unstable".',
     imageSrc: "/images/blop.png",
@@ -35,7 +35,7 @@ const projects: Project[] = [
   },
   {
     title: "andrew is bored",
-    role: "Game Designer/Artist",
+    role: "Game Design/Art",
     description:
       "A puzzle platformer where you move around by dashing through blocks of light and dark.",
     imageSrc: "/images/andrew.png",
@@ -45,7 +45,7 @@ const projects: Project[] = [
   },
   {
     title: "Portfolio V1",
-    role: "Web Designer",
+    role: "Web Design",
     description:
       "My first portfolio site, fully response and designed from scratch with the holy trinity.",
     imageSrc: "/images/site.png",
@@ -74,10 +74,10 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
     <div className="flex flex-col justify-between">
       <div>
         <h6 className="text-base font-medium text-gray-400">{project.role}</h6>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           {project.title}
         </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        <p className="text-base text-gray-700 dark:text-gray-300 mb-6">
           {project.description}
         </p>
       </div>
@@ -85,7 +85,7 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
         {project.techStack.map((tech, index) => (
           <span
             key={index}
-            className="text-base bg-gray-300 dark:bg-teal-800 text-gray-700 dark:text-teal-50 px-4 py-1 rounded-full border-2 border-teal-500 "
+            className="text-sm bg-gray-300 dark:bg-teal-800 text-gray-700 dark:text-teal-50 px-4 py-1 rounded-full border-2 border-teal-500 "
           >
             {tech}
           </span>

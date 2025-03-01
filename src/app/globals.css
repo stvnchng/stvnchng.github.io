@@ -5,8 +5,7 @@
 /* Global Styles */
 html {
   @apply transition-colors duration-300;
-  font: 12px "Quicksand", sans-serif;
-  color: white;
+  font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -57,7 +56,7 @@ body.dark div {
   text-align: center;
   letter-spacing: 2px;
   transition: all 0.3s;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
 }
@@ -128,4 +127,22 @@ body.dark div {
 canvas {
   z-index: -9999 !important;
   pointer-events: none !important;
+}
+
+.left {
+  position: fixed;
+  width: 40px;
+  left: 40px;
+  bottom: 0px;
+  z-index: 1000;
+  margin-bottom: 0px !important;
+}
+
+.left::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: white;
+  margin: 0px auto;
 }

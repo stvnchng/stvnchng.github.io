@@ -10,13 +10,13 @@ type WorkItemProps = {
 
 function WorkItem({ company, logo, title, date, desc }: WorkItemProps) {
   return (
-    <div className="relative w-full max-w-5xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
+    <div className="relative w-full max-w-4xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
       <div className="flex-1">
-        <h1 className="text-3xl font-bold text-gray-50">
+        <h1 className="text-2xl font-bold text-gray-50">
           {title} @ {company}
         </h1>
-        <h6 className="text-lg text-gray-200">{date}</h6>
-        <ul className="text-lg list-disc pl-6 text-gray-100 space-y-1">
+        <h6 className="text-base text-gray-200">{date}</h6>
+        <ul className="text-sm list-disc pl-6 text-gray-100 space-y-1">
           {desc.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
@@ -63,8 +63,8 @@ export default function Work() {
           title="Intern"
           date="Jun. 2022 - Aug. 2022"
           desc={[
-            "Owned a project to add sorting/filtering to Coinbase Wallet’s transactions page, working with Product and Design to improve the UX and usability.",
-            "Helped release Wallet to 100% of over 10 million mobile users, fixing UI bugs and adding new components.",
+            "Owned a project to add sorting/filtering to Coinbase Wallet’s transactions page, improving user experience.",
+            "Helped release Wallet to 100% of over 10 million mobile users. Worked closely with Product and Design to address UI jank and redesign components.",
           ]}
         />
         <WorkItem

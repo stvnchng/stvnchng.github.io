@@ -29,8 +29,8 @@ const socials = [
 
 export default function Socials() {
   return (
-    <div className="fixed left-4 bottom-8 md:left-6 md:bottom-6 md:block hidden">
-      <ul className="flex flex-col gap-5">
+    <div className="left fixed left-4 md:left-6 md:block hidden">
+      <ul className="flex flex-col gap-5 my-4">
         {socials.map(({ href, tooltip, title, icon }) => (
           <li key={title}>
             <a

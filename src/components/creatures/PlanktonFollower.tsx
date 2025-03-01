@@ -18,7 +18,7 @@ export default function PlanktonFollower({
 }: PlanktonFollowerProps) {
   const [renderPosition, setRenderPosition] = useState(spawnPosition);
   const [opacity, setOpacity] = useState(1);
-  const lifespan = useRef(60000 / (id + 1));
+  const lifespan = useRef(50000 / (id + 1));
   const positionRef = useRef(spawnPosition);
   const targetRef = useRef(spawnPosition);
   const velocityRef = useRef({ x: 0, y: 0 });
@@ -26,12 +26,8 @@ export default function PlanktonFollower({
   // Generate random styles ONCE on mount
   const randomStyles = useMemo(() => generateRandomStyles(id), [id]);
 
-  // TODO remove this
   useEffect(() => {
-    console.log("Plankton spawned at", spawnPosition, "ttl:", lifespan);
-
-    // const fadeTimeout = setTimeout(() => setOpacity(0), lifespan - 1000);
-    // const lifespanTimeout = setTimeout(() => removePlankton(id), lifespan);
+    // console.log("Plankton spawned at", spawnPosition, "ttl:", lifespan);
     const checkLifespan = setInterval(() => {
       if (lifespan.current <= 0) {
         removePlankton(id);
@@ -43,10 +39,8 @@ export default function PlanktonFollower({
     }, 1000);
 
     return () => {
-      console.log("RIP Plankton", id);
+      // console.log("RIP Plankton", id);
       clearInterval(checkLifespan);
-      // clearTimeout(fadeTimeout);
-      // clearTimeout(lifespanTimeout);
     };
   }, []);
 
@@ -64,11 +58,10 @@ export default function PlanktonFollower({
 
   useEffect(() => {
     let animationFrameId: number;
-    const maxSpeed = 2;
+    const maxSpeed = Math.E;
     const maxForce = 0.06;
     const wanderStrength = 0.3;
     const damping = 0.9;
-    const maxX = window.innerWidth * 0.85;
 
     const animate = () => {
       const toTarget = {
@@ -107,21 +100,18 @@ export default function PlanktonFollower({
       velocityRef.current.x = (velocityRef.current.x + steer.x) * damping;
       velocityRef.current.y = (velocityRef.current.y + steer.y) * damping;
 
-      if (positionRef.current.x < 0) {
-        positionRef.current.x = 0;
-        velocityRef.current.x *= -1;
-      } else if (positionRef.current.x > maxX) {
-        positionRef.current.x = maxX;
-        velocityRef.current.x *= -1;
-      } else {
-        positionRef.current.x += velocityRef.current.x;
-      }
+      positionRef.current.x += velocityRef.current.x;
 
+      // clamp y position
       if (positionRef.current.y < 0) {
         positionRef.current.y = 0;
         velocityRef.current.y *= -1;
-      } else if (positionRef.current.y > document.body.scrollHeight) {
-        positionRef.current.y = document.body.scrollHeight;
+      } else if (
+        positionRef.current.y >
+        document.documentElement.scrollHeight - window.innerHeight / 8
+      ) {
+        positionRef.current.y =
+          document.documentElement.scrollHeight - window.innerHeight / 8;
         velocityRef.current.y *= -1;
       } else {
         positionRef.current.y += velocityRef.current.y;
@@ -174,20 +164,25 @@ const generateRandomStyles = (id: number) => {
     inner: {
       borderRadius: `${detRnd(id, 40, 30)}% ${detRnd(id + 1, 40, 30)}% 
                     ${detRnd(id + 2, 40, 30)}% ${detRnd(id + 3, 40, 30)}%`,
-      width: `${detRnd(id + 4, 95, 20)}%`,
-      height: `${detRnd(id + 5, 95, 20)}%`,
+      width: `${detRnd(id + 4, 80, 15)}%`,
+      height: `${detRnd(id + 5, 80, 15)}%`,
     },
     outer: {
       borderRadius: `${detRnd(id + 6, 40, 30)}% ${detRnd(id + 7, 40, 30)}% 
                     ${detRnd(id + 8, 40, 30)}% ${detRnd(id + 9, 40, 30)}%`,
-      width: `${detRnd(id + 10, 120, 20)}%`,
-      height: `${detRnd(id + 11, 120, 20)}%`,
+      width: `${detRnd(id + 10, 105, 15)}%`,
+      height: `${detRnd(id + 11, 105, 15)}%`,
     },
     glow: {
       borderRadius: `${detRnd(id + 12, 40, 30)}% ${detRnd(id + 13, 40, 30)}% 
                     ${detRnd(id + 14, 40, 30)}% ${detRnd(id + 15, 40, 30)}%`,
-      width: `${detRnd(id + 16, 170, 20)}%`,
-      height: `${detRnd(id + 17, 170, 20)}%`,
+      boxShadow: `
+        0 0 ${detRnd(id + 6, 30, 40)}px rgba(0, 255, 255, 0.3),
+        0 0 ${detRnd(id + 7, 60, 40)}px rgba(0, 255, 255, 0.2),
+        0 0 ${detRnd(id + 8, 100, 50)}px rgba(0, 255, 255, 0.1)
+      `,
+      width: `${detRnd(id + 16, 140, 15)}%`,
+      height: `${detRnd(id + 17, 140, 15)}%`,
     },
   };
 };

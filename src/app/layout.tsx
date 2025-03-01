@@ -29,7 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // TODO: remove theme toggle so dark doesn't need to be set here
+    <html lang="en" className="dark">
       <body className={`${poppins.variable} ${quicksand.variable} antialiased`}>
         <Header />
         <Socials />

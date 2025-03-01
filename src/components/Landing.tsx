@@ -1,18 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PlanktonFollower from "./creatures/PlanktonFollower";
 
 export default function Landing() {
   const [planktonFollowers, setPlanktonFollowers] = useState([
-    { id: 0, spawnPosition: { x: 0, y: 0 } },
+    { id: 0, spawnPosition: { x: 300, y: 300 } },
   ]);
-  const [nextId, setNextId] = useState(1);
+  const nextId = useRef(1);
+
+  useEffect(() => {
+    // repopulate plankton followers and reset environment
+    if (!planktonFollowers.length) {
+      nextId.current = 0;
+      addPlanktonFollower(300, 300);
+    }
+  }, [planktonFollowers]);
 
   const addPlanktonFollower = (x: number, y: number) => {
-    const newPlankton = { id: nextId, spawnPosition: { x, y } };
+    const newPlankton = { id: nextId.current, spawnPosition: { x, y } };
+
     setPlanktonFollowers((prev) => [...prev, newPlankton]);
-    setNextId(nextId + 1);
+    nextId.current++;
   };
 
   const removePlankton = (id: number) => {
