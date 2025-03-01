@@ -20,7 +20,7 @@ export default function MarineSnow() {
     init && (
       <Particles
         options={{
-          fpsLimit: 60,
+          fpsLimit: 120,
           interactivity: {
             events: {
               onHover: {
@@ -48,7 +48,7 @@ export default function MarineSnow() {
                 default: "none",
               },
               random: true,
-              speed: 1,
+              speed: 0.5,
               straight: false,
             },
             number: {
@@ -61,7 +61,7 @@ export default function MarineSnow() {
               type: "circle",
             },
             size: {
-              value: { min: 1, max: 5 },
+              value: { min: 1, max: 4 },
             },
           },
           detectRetina: true,

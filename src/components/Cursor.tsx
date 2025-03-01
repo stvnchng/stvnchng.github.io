@@ -12,6 +12,7 @@ export default function CursorLight() {
     light.style.pointerEvents = "none";
     light.style.transition = "transform 0.05s ease-out";
     light.style.transition = "box-shadow 0.1s ease-out";
+    light.style.zIndex = "9999";
     document.body.appendChild(light);
 
     let mouseX = 0;
@@ -27,7 +28,7 @@ export default function CursorLight() {
       mouseY = event.clientY;
       updateLightPosition();
 
-      light.style.boxShadow = `0 0 300px 150px rgba(0, 255, 255, 0.3)`;
+      light.style.boxShadow = `0 0 480px 120px rgba(0, 255, 255, 0.3)`;
     };
 
     const handleScroll = () => {
