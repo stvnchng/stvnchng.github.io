@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "Portfolio V1",
     role: "Web Design",
     description:
-      "My first portfolio site, fully response and designed from scratch with the holy trinity.",
+      "My first portfolio site. Fully responsive and designed from scratch with the holy trinity.",
     imageSrc: "/images/site.png",
     imageAlt: "this website",
     link: "#",
@@ -58,7 +58,7 @@ const projects: Project[] = [
 ];
 
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-5xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl mx-auto">
     <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
       <Image
         src={project.imageSrc}
