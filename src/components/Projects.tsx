@@ -1,16 +1,11 @@
 import React from "react";
 import { GitHubIcon, LinkIcon } from "./svgs/Icons";
-import Image, { StaticImageData } from "next/image";
-import TetrioImg from "../../public/images/tetrio.png";
-import BlopImg from "../../public/images/blop.png";
-import AndrewImg from "../../public/images/andrew.png";
-import V1SiteImg from "../../public/images/site.png";
 
 type Project = {
   title: string;
   role: string;
   description: string;
-  imageSrc: StaticImageData;
+  imageSrc: string;
   imageAlt: string;
   link: string;
   githubLink?: string;
@@ -23,7 +18,7 @@ const projects: Project[] = [
     role: "Game Design",
     description:
       "A tile-matching game disguised as a Tetris clone. Currently working on adding polish and juice.",
-    imageSrc: TetrioImg,
+    imageSrc: "/images/tetrio.png",
     imageAlt: "TETRIO gameplay",
     link: "https://solmaris.github.io/tetrio/",
     techStack: ["Godot", "GDScript"],
@@ -33,7 +28,7 @@ const projects: Project[] = [
     role: "Game Design",
     description:
       'A game where you stack tetrominoes under a time limit. Built for Ludum Dare 49. The theme was "unstable".',
-    imageSrc: BlopImg,
+    imageSrc: "/images/blop.png",
     imageAlt: "BLOP gameplay",
     link: "https://amberlightgames.itch.io/blop",
     techStack: ["Unity", "C#"],
@@ -43,7 +38,7 @@ const projects: Project[] = [
     role: "Game Design/Art",
     description:
       "A puzzle platformer where you move around by dashing through blocks of light and dark.",
-    imageSrc: AndrewImg,
+    imageSrc: "/images/andrew.png",
     imageAlt: "Andrew Is Bored gameplay",
     link: "https://amberlightgames.itch.io/andrew-is-bored",
     techStack: ["Unity", "C#"],
@@ -53,7 +48,7 @@ const projects: Project[] = [
     role: "Web Design",
     description:
       "My first portfolio site. Fully responsive and designed from scratch with the holy trinity.",
-    imageSrc: V1SiteImg,
+    imageSrc: "/images/site.png",
     imageAlt: "this website",
     link: "https://stvnchng.github.io/portfolio-v1/",
     githubLink: "https://github.com/stvnchng/portfolio-v1",
@@ -64,11 +59,9 @@ const projects: Project[] = [
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl mx-auto">
     <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-      <Image
+      <img
         src={project.imageSrc}
         alt={project.imageAlt}
-        width={600}
-        height={350}
         className="w-full h-auto object-cover rounded-lg"
         loading="lazy"
       />

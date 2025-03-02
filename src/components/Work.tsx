@@ -1,14 +1,12 @@
-import Image from "next/image";
-
 type WorkItemProps = {
   company: string;
-  logo: string;
+  logoSrc: string;
   title: string;
   date: string;
   desc: string[];
 };
 
-function WorkItem({ company, logo, title, date, desc }: WorkItemProps) {
+function WorkItem({ company, logoSrc, title, date, desc }: WorkItemProps) {
   return (
     <div className="relative w-full max-w-4xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
       <div className="flex-1">
@@ -23,12 +21,10 @@ function WorkItem({ company, logo, title, date, desc }: WorkItemProps) {
         </ul>
       </div>
       <div className="flex-shrink-0 ml-6">
-        <Image
-          src={`/images/${logo}`}
+        <img
+          src={logoSrc}
           alt={`${company} logo`}
-          width={80}
-          height={80}
-          className="object-contain"
+          className="object-contain h-16 w-auto rounded-lg"
         />
       </div>
     </div>
@@ -47,7 +43,7 @@ export default function Work() {
       <div className="w-full flex flex-col space-y-8">
         <WorkItem
           company="EnergyBot"
-          logo="ebot.svg"
+          logoSrc="/images/ebot.svg"
           title="Engineer"
           date="Apr. 2023 - Present"
           desc={[
@@ -59,7 +55,7 @@ export default function Work() {
         />
         <WorkItem
           company="Coinbase"
-          logo="coinbase.jpg"
+          logoSrc="/images/coinbase.jpg"
           title="Intern"
           date="Jun. 2022 - Aug. 2022"
           desc={[
@@ -69,7 +65,7 @@ export default function Work() {
         />
         <WorkItem
           company="CyberCube"
-          logo="cybcube.png"
+          logoSrc="/images/cybcube.png"
           title="Intern"
           date="Jun. 2021 - Aug. 2021"
           desc={[
@@ -79,7 +75,7 @@ export default function Work() {
         />
         <WorkItem
           company="Kopis Mobile"
-          logo="kopis.png"
+          logoSrc="/images/kopis.png"
           title="Engineer"
           date="Aug. 2020 - Apr. 2021"
           desc={[

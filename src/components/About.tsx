@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="py-16">
       <div className="mx-auto max-w-3xl px-6">
         <div className="flex items-center justify-center mx-auto">
-          <div className="ml-10">
+          <div>
             <p className="text-lg">
               Hi, I&apos;m Steven. I specialize in crafting great user
               experiences. I am currently an engineer at EnergyBot, where I work
