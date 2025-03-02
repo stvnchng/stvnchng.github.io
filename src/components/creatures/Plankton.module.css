@@ -5,7 +5,6 @@
     rgba(0, 255, 255, 0.8),
     rgba(255, 0, 255, 0.8)
   );
-  box-shadow: 0 0 4em rgba(0, 255, 255, 0.7);
   animation: pulse 4s infinite ease-in-out, hue-shift 10s infinite linear,
     wobble 6s infinite ease-in-out;
 }
@@ -52,7 +51,7 @@
     opacity: 0.4;
   }
   50% {
-    opacity: 0.9;
+    opacity: 1;
   }
 }
 

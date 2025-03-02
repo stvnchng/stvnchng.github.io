@@ -168,10 +168,9 @@ const detRnd = (seed: number, min: number, factor: number) => {
 };
 
 const generateRandomStyles = (id: number) => {
-  const isMobile = window.innerWidth <= 768;
-  const innerSize = isMobile ? 40 : 60;
-  const outerSize = isMobile ? 65 : 85;
-  const glowSize = isMobile ? 90 : 120;
+  const innerSize = 40;
+  const outerSize = 65;
+  const glowSize = 90;
   return {
     inner: {
       borderRadius: `${detRnd(id, 40, 30)}% ${detRnd(id + 1, 40, 30)}% 
