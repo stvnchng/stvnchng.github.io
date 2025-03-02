@@ -102,7 +102,15 @@ export default function PlanktonFollower({
 
       positionRef.current.x += velocityRef.current.x;
 
-      // clamp y position
+      // TODO fix on mobile
+      if (positionRef.current.x < 0) {
+        positionRef.current.x = 0;
+        velocityRef.current.x *= -1;
+      } else if (positionRef.current.x > window.innerWidth * 0.8) {
+        positionRef.current.x = window.innerWidth * 0.8;
+        velocityRef.current.x *= -1;
+      }
+
       if (positionRef.current.y < 0) {
         positionRef.current.y = 0;
         velocityRef.current.y *= -1;
@@ -135,7 +143,7 @@ export default function PlanktonFollower({
 
   return (
     <div
-      className={styles.hydrozoan}
+      className="absolute w-24 h-24 flex items-center justify-center"
       onClick={handleClick}
       style={{
         position: "absolute",
@@ -160,18 +168,22 @@ const detRnd = (seed: number, min: number, factor: number) => {
 };
 
 const generateRandomStyles = (id: number) => {
+  const isMobile = window.innerWidth <= 768;
+  const innerSize = isMobile ? 40 : 60;
+  const outerSize = isMobile ? 65 : 85;
+  const glowSize = isMobile ? 90 : 120;
   return {
     inner: {
       borderRadius: `${detRnd(id, 40, 30)}% ${detRnd(id + 1, 40, 30)}% 
                     ${detRnd(id + 2, 40, 30)}% ${detRnd(id + 3, 40, 30)}%`,
-      width: `${detRnd(id + 4, 60, 15)}%`,
-      height: `${detRnd(id + 5, 60, 15)}%`,
+      width: `${detRnd(id + 4, innerSize, 15)}%`,
+      height: `${detRnd(id + 5, innerSize, 15)}%`,
     },
     outer: {
       borderRadius: `${detRnd(id + 6, 40, 30)}% ${detRnd(id + 7, 40, 30)}% 
                     ${detRnd(id + 8, 40, 30)}% ${detRnd(id + 9, 40, 30)}%`,
-      width: `${detRnd(id + 10, 85, 15)}%`,
-      height: `${detRnd(id + 11, 85, 15)}%`,
+      width: `${detRnd(id + 10, outerSize, 15)}%`,
+      height: `${detRnd(id + 11, outerSize, 15)}%`,
     },
     glow: {
       borderRadius: `${detRnd(id + 12, 40, 30)}% ${detRnd(id + 13, 40, 30)}% 
@@ -181,8 +193,8 @@ const generateRandomStyles = (id: number) => {
         0 0 ${detRnd(id + 7, 60, 40)}px rgba(0, 255, 255, 0.2),
         0 0 ${detRnd(id + 8, 100, 50)}px rgba(0, 255, 255, 0.1)
       `,
-      width: `${detRnd(id + 16, 120, 15)}%`,
-      height: `${detRnd(id + 17, 120, 15)}%`,
+      width: `${detRnd(id + 16, glowSize, 15)}%`,
+      height: `${detRnd(id + 17, glowSize, 15)}%`,
     },
   };
 };

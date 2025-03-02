@@ -18,6 +18,14 @@ export default function CursorLight() {
     let mouseX = 0;
     let mouseY = 0;
 
+    const setLightSize = () => {
+      const isMobile = window.innerWidth <= 768;
+      const boxShadowSize = isMobile ? "240px" : "480px";
+      const boxShadowSpread = isMobile ? "60px" : "120px";
+
+      light.style.boxShadow = `0 0 ${boxShadowSize} ${boxShadowSpread} rgba(0, 255, 255, 0.3)`;
+    };
+
     const updateLightPosition = () => {
       light.style.left = `${mouseX + window.scrollX - 50}px`;
       light.style.top = `${mouseY + window.scrollY - 50}px`;
@@ -31,16 +39,30 @@ export default function CursorLight() {
       light.style.boxShadow = `0 0 480px 120px rgba(0, 255, 255, 0.3)`;
     };
 
+    const handleTouchMove = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      if (touch) {
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+        updateLightPosition();
+        setLightSize();
+      }
+    };
+
     const handleScroll = () => {
       updateLightPosition();
     };
 
+    setLightSize();
+    window.addEventListener("resize", setLightSize);
     document.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("touchmove", handleTouchMove);
       document.body.removeChild(light);
     };
   }, []);

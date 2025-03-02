@@ -29,7 +29,7 @@ export default function Landing() {
   };
 
   return (
-    <section className="section-top flex flex-col items-center justify-center min-h-screen p-4">
+    <section className="relative w-full h-screen flex flex-col items-center justify-center min-h-screen p-4">
       {planktonFollowers.map((plankton) => (
         <PlanktonFollower
           key={plankton.id}
