@@ -33,11 +33,8 @@ function WorkItem({ company, logoSrc, title, date, desc }: WorkItemProps) {
 
 export default function Work() {
   return (
-    <section
-      id="work"
-      className="py-16 px-4 sm:px-8 flex flex-col items-center"
-    >
-      <div className="text-center mb-12">
+    <section id="work" className="py-16 px-6 md:px-20">
+      <div className="text-center mb-8">
         <h1 className="text-4xl font-light uppercase">Experience</h1>
       </div>
       <div className="w-full flex flex-col space-y-8">
@@ -48,9 +45,9 @@ export default function Work() {
           date="Apr. 2023 - Present"
           desc={[
             "Improved test pipeline speed by 6-7x by migrating to a parallel headless setup.",
-            "Reduced LCP on shop site from ~6s to ~1s and conducted regular Lighthouse audits.",
-            "Improved scalalibity of emails by writing a concurrent migration script from S3 to Elasticsearch.",
-            "Added hundreds of plan options for customers by integrating external supplier APIs (OhmConnect, New Wave Energy, etc.) into shopping experience.",
+            "Reduced LCP on pages from ~6s to ~1s.",
+            "Improved search efficiency of transactional emails by writing a concurrent migration script from S3 to Elasticsearch.",
+            "Added hundreds of plan options for customers by integrating energy supplier APIs into shopping experience.",
           ]}
         />
         <WorkItem

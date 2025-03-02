@@ -17,6 +17,10 @@ export default {
         darkText: "#A1C6D8", // Soft moonlight blue/white for text, like bioluminescent glow
         darkAccent: "#2E4F5D", // Muted, deep teal, like deep ocean water
       },
+      backgroundImage: {
+        "sea-floor":
+          "linear-gradient(to bottom, #01121A 60%, #013D47 80%, #5a9b9d)",
+      },
     },
   },
   plugins: [],

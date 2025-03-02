@@ -14,12 +14,12 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Tetrio",
+    title: "Tetrois",
     role: "Game Design",
     description:
       "A tile-matching game disguised as a Tetris clone. Currently working on adding polish and juice.",
     imageSrc: "/images/tetrio.png",
-    imageAlt: "TETRIO gameplay",
+    imageAlt: "Tetrois gameplay",
     link: "https://solmaris.github.io/tetrio/",
     techStack: ["Godot", "GDScript"],
   },
@@ -57,7 +57,7 @@ const projects: Project[] = [
 ];
 
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-8 p-6 bg-gray-100 dark:bg-zinc-600/50 rounded-xl shadow-lg max-w-4xl mx-auto">
     <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
       <img
         src={project.imageSrc}
@@ -117,15 +117,13 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
 
 export default function Projects() {
   return (
-    <section className="py-12 z-10" id="projects">
-      <div className="mx-auto px-6">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-light uppercase">Projects</h1>
-        </div>
-        {projects.map((project, index) => (
-          <ProjectItem key={index} project={project} />
-        ))}
+    <section id="projects" className="py-12 px-6 md:px-20 z-10">
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-light uppercase">Projects</h1>
       </div>
+      {projects.map((project, index) => (
+        <ProjectItem key={index} project={project} />
+      ))}
     </section>
   );
 }

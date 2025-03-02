@@ -62,10 +62,7 @@ export default function PlanktonFollower({
     const maxForce = 0.06;
     const wanderStrength = 0.3;
     const damping = 0.9;
-    const maxX =
-      window.innerWidth > 768
-        ? window.innerWidth * 0.95
-        : window.innerWidth * 0.7;
+    const maxX = window.innerWidth;
 
     const animate = () => {
       const toTarget = {
@@ -116,10 +113,10 @@ export default function PlanktonFollower({
         velocityRef.current.y *= -1;
       } else if (
         positionRef.current.y >
-        document.documentElement.scrollHeight - window.innerHeight / 8
+        document.documentElement.scrollHeight - window.innerHeight / 6
       ) {
         positionRef.current.y =
-          document.documentElement.scrollHeight - window.innerHeight / 8;
+          document.documentElement.scrollHeight - window.innerHeight / 6;
         velocityRef.current.y *= -1;
       } else {
         positionRef.current.y += velocityRef.current.y;
