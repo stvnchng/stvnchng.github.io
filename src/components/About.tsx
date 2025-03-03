@@ -1,7 +1,27 @@
+import { EmailIcon, GitHubIcon, LinkedInIcon } from "./svgs/Icons";
+
+const socials = [
+  {
+    href: "mailto:sc111@rice.edu",
+    label: "Email",
+    icon: <EmailIcon />,
+  },
+  {
+    href: "https://github.com/stvnchng",
+    label: "@stvnchng on GitHub",
+    icon: <GitHubIcon />,
+  },
+  {
+    href: "https://linkedin.com/in/stvnchng",
+    label: "Steven Chung on LinkedIn",
+    icon: <LinkedInIcon />,
+  },
+];
+
 export default function About() {
   return (
     <section id="about" className="py-16 px-6 md:px-20">
-      <div className="max-w-3xl">
+      <div className="max-w-2xl">
         <p className="text-lg">
           Hi, I&apos;m Steven. I enjoy crafting seamless user experiences and
           bringing fun ideas to life. I&apos;m currently an engineer at
@@ -22,8 +42,22 @@ export default function About() {
           While you&apos;re here, please be sure to keep the plankton fed. They
           only need light but they tend to starve easily!
         </p>
+        <br />
+        <div className="md:hidden flex justify-center gap-4">
+          {socials.map(({ href, label, icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="p-1 transition hover:text-lightAccent dark:hover:text-darkAccent"
+            >
+              {icon}
+            </a>
+          ))}
+        </div>
       </div>
-      {/* TODO add socials for mobile view */}
     </section>
   );
 }
