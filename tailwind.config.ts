@@ -19,7 +19,7 @@ export default {
       },
       backgroundImage: {
         "sea-floor":
-          "linear-gradient(to bottom, #01121A 60%, #013D47 80%, #5a9b9d)",
+          "linear-gradient(to bottom, #000A10 50%, #01121A 70%, #013D47 85%, #5a9b9d)",
       },
     },
   },

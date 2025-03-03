@@ -9,7 +9,7 @@ type WorkItemProps = {
 
 function WorkItem({ company, href, title, date, desc }: WorkItemProps) {
   return (
-    <div className="relative w-full max-w-4xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
+    <div className="relative w-full max-w-3xl bg-zinc-600/50 rounded-lg shadow-lg p-6 md:p-8 space-y-4 flex flex-col md:flex-row items-start md:items-center transition duration-300 hover:scale-105">
       <div className="flex-1">
         <h1 className="text-2xl font-bold text-gray-50">
           {title} @{" "}

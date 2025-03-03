@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Tetrois",
     role: "Game Design",
     description:
-      "A tile-matching game disguised as a Tetris clone. Currently working on adding polish and juice.",
+      "A tile-matching game disguised as a Tetris clone. Currently in development.",
     imageSrc: "/images/tetrio.png",
     imageAlt: "Tetrois gameplay",
     link: "https://solmaris.github.io/tetrio/",
@@ -26,8 +26,7 @@ const projects: Project[] = [
   {
     title: "BLOP",
     role: "Game Design",
-    description:
-      'A game where you stack tetrominoes under a time limit. Built for Ludum Dare 49. The theme was "unstable".',
+    description: "A game where you stack tetrominoes. Built for Ludum Dare 49.",
     imageSrc: "/images/blop.png",
     imageAlt: "BLOP gameplay",
     link: "https://amberlightgames.itch.io/blop",
@@ -57,17 +56,14 @@ const projects: Project[] = [
 ];
 
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-8 p-6 bg-gray-100 dark:bg-zinc-600/50 rounded-xl shadow-lg max-w-4xl mx-auto">
-    <div className="relative overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-8 p-6 bg-gray-100 dark:bg-zinc-600/50 rounded-xl shadow-lg max-w-3xl mx-auto">
+    <div className="relative overflow-hidden rounded-lg transform transition duration-300 hover:scale-105">
       <img
         src={project.imageSrc}
         alt={project.imageAlt}
         className="w-full h-auto object-cover rounded-lg"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center">
-        <h3 className="text-white text-2xl font-semibold">{project.title}</h3>
-      </div>
     </div>
     <div className="flex flex-col justify-between">
       <div>
@@ -89,7 +85,7 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
           </span>
         ))}
       </div>
-      <div className="cta-buttons flex space-x-4">
+      <div className="flex space-x-4">
         <a
           href={project.link}
           target="_blank"
