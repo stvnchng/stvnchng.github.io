@@ -7,10 +7,10 @@ html {
   @apply transition-colors duration-300;
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
-}
-
-body {
   overflow-x: hidden;
+  width: 100vw;
+  position: relative;
+  max-width: 100%;
 }
 
 body::-webkit-scrollbar {
