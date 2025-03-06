@@ -18,6 +18,7 @@ export default function Landing() {
   }, [planktonFollowers]);
 
   const addPlanktonFollower = (x: number, y: number) => {
+    if (planktonFollowers.length >= 10) return;
     const newPlankton = { id: nextId.current, spawnPosition: { x, y } };
 
     setPlanktonFollowers((prev) => [...prev, newPlankton]);
