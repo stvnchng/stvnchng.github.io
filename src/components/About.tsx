@@ -51,7 +51,7 @@ export default function About() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="p-1 transition hover:text-lightAccent dark:hover:text-darkAccent"
+              className="p-2 transition active:scale-90 focus:scale-90"
             >
               {icon}
             </a>

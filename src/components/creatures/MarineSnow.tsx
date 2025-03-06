@@ -33,7 +33,7 @@ export default function MarineSnow() {
             },
             modes: {
               repulse: {
-                distance: 100,
+                distance: 69,
                 duration: 0.4,
               },
             },
@@ -48,8 +48,9 @@ export default function MarineSnow() {
                 default: "none",
               },
               random: true,
-              speed: 0.5,
+              speed: { min: 0.2, max: 0.6 },
               straight: false,
+              angle: { offset: 50, value: 69 },
             },
             number: {
               value: 69,
@@ -58,8 +59,9 @@ export default function MarineSnow() {
               value: 0.5,
             },
             shape: {
-              type: "circle",
+              type: ["circle", "polygon"],
             },
+            angle: { value: 90, offset: 45 },
             size: {
               value: { min: 1.5, max: 3 },
             },

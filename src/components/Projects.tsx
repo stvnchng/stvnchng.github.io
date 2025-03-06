@@ -56,8 +56,8 @@ const projects: Project[] = [
 ];
 
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-8 p-6 bg-gray-100 dark:bg-zinc-600/50 rounded-xl shadow-lg max-w-3xl mx-auto">
-    <div className="relative overflow-hidden rounded-lg transform transition duration-300 hover:scale-105">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-8 p-6 bg-gray-100 dark:bg-zinc-600/50 rounded-xl shadow-lg max-w-3xl mx-auto transition duration-300 md:hover:scale-105">
+    <div className="relative overflow-hidden rounded-lg">
       <img
         src={project.imageSrc}
         alt={project.imageAlt}

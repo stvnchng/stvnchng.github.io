@@ -74,7 +74,7 @@ export default function PlanktonFollower({
       const desiredVelocity = { x: 0, y: 0 };
 
       const angleToTarget = Math.atan2(toTarget.y, toTarget.x);
-      if (distance > 200) {
+      if (distance > 180) {
         const wanderAngle = angleToTarget + Math.random() * wanderStrength;
         desiredVelocity.x =
           Math.cos(wanderAngle) * maxSpeed + id * 0.1 * (-1) ** id;
