@@ -62,7 +62,7 @@ export default function PlanktonFollower({
     const maxForce = 0.06;
     const wanderStrength = 0.3;
     const damping = 0.9;
-    const maxX = window.innerWidth;
+    const maxX = window.innerWidth * 0.95;
 
     const animate = () => {
       const toTarget = {

@@ -5,7 +5,7 @@ import PlanktonFollower from "./creatures/PlanktonFollower";
 
 export default function Landing() {
   const [planktonFollowers, setPlanktonFollowers] = useState([
-    { id: 0, spawnPosition: { x: 300, y: 300 } },
+    { id: 0, spawnPosition: { x: 250, y: 250 } },
   ]);
   const nextId = useRef(1);
 
@@ -13,7 +13,7 @@ export default function Landing() {
     // repopulate plankton followers and reset environment
     if (!planktonFollowers.length) {
       nextId.current = 0;
-      addPlanktonFollower(300, 300);
+      addPlanktonFollower(250, 250);
     }
   }, [planktonFollowers]);
 
