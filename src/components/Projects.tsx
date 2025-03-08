@@ -67,7 +67,9 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => (
     </div>
     <div className="flex flex-col justify-between">
       <div>
-        <h6 className="text-base font-medium text-gray-400">{project.role}</h6>
+        <span className="text-base font-medium text-gray-400">
+          {project.role}
+        </span>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           {project.title}
         </h1>

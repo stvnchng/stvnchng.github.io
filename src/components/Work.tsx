@@ -21,7 +21,7 @@ function WorkItem({ company, href, title, date, desc }: WorkItemProps) {
             {company}
           </a>
         </h1>
-        <h6 className="text-base text-gray-200">{date}</h6>
+        <span className="text-base text-gray-200">{date}</span>
         <ul className="text-sm list-disc pl-6 text-gray-100 space-y-1">
           {desc.map((item, index) => (
             <li key={index}>{item}</li>
