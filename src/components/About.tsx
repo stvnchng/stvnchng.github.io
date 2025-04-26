@@ -2,7 +2,7 @@ import { EmailIcon, GitHubIcon, LinkedInIcon } from "./svgs/Icons";
 
 const socials = [
   {
-    href: "mailto:sc111@rice.edu",
+    href: "mailto:stvnchng22@gmail.com",
     label: "Email",
     icon: <EmailIcon />,
   },

@@ -2,9 +2,9 @@ import { EmailIcon, GitHubIcon, LinkedInIcon, ResumeIcon } from "./svgs/Icons";
 
 const socials = [
   {
-    href: "mailto:sc111@rice.edu",
-    tooltip: "sc111@rice.edu",
-    label: "Message at sc111@rice.edu",
+    href: "mailto:stvnchng22@gmail.com",
+    tooltip: "stvnchng22@gmail.com",
+    label: "Message at stvnchng22@gmail.com",
     icon: <EmailIcon />,
   },
   {
