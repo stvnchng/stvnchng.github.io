@@ -20,7 +20,7 @@ const socials = [
     icon: <LinkedInIcon />,
   },
   {
-    href: "https://drive.google.com/file/d/1wH1-iK6-sJOMju3P3_1UzgOpVkHHOVJl/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1n70QkoCRa60zgiffB6XmlFe2WP2EMErg/view?usp=sharing",
     tooltip: "résumé",
     label: "My resume",
     icon: <ResumeIcon />,
