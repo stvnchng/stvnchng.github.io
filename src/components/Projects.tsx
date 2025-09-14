@@ -14,12 +14,12 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Tetrois",
+    title: "Tetrite",
     role: "Game Design",
     description:
       "A tile-matching game disguised as a Tetris clone. Currently in development.",
     imageSrc: "/images/tetrio.png",
-    imageAlt: "Tetrois gameplay",
+    imageAlt: "Tetrite gameplay",
     link: "https://solmaris.github.io/tetrio/",
     techStack: ["Godot", "GDScript"],
   },
